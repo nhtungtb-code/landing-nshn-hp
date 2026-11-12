@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tuyển sinh 2026–2027 | Ngôi Sao Hà Nội – Hải Phòng</title>
-<meta name="description" content="Trường Ngôi Sao Hà Nội – Hải Phòng Campus tuyển sinh Tiểu học, THCS, THPT năm học 2026–2027. Xuất sắc bằng nỗ lực – Trưởng thành trong yêu thương.">
-<meta property="og:title" content="Tuyển sinh 2026–2027 | Ngôi Sao Hà Nội – Hải Phòng">
+<title>Tuyển sinh 2027 – 2028 | Ngôi Sao Hà Nội – Hải Phòng</title>
+<meta name="description" content="Trường Ngôi Sao Hà Nội – Hải Phòng campus tuyển sinh Tiểu học, THCS, THPT năm học 2027 – 2028. Xuất sắc bằng nỗ lực – Trưởng thành trong yêu thương.">
+<meta property="og:title" content="Tuyển sinh 2027 – 2028 | Ngôi Sao Hà Nội – Hải Phòng">
 <meta property="og:image" content="assets/s-hs-san-truong.jpg">
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,7 +94,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);bac
 
 /* stats */
 .stats{background:var(--paper);padding:0;border-bottom:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
 .stat{padding:34px 20px;border-left:1px solid var(--line)}
 .stat:first-child{border-left:0;padding-left:0}
 .stat .n{font-family:'Lora',serif;font-size:clamp(30px,3.6vw,44px);font-weight:600;color:var(--green);line-height:1}
@@ -234,12 +234,77 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media(max-width:700px){section{padding:64px 0}}
+
+/* ===== Làm mềm UI/UX: bo tròn, bóng nhẹ, màu dịu, chuyển động êm ===== */
+:root{--r:14px;--line:#ece7da;--paper:#fcf9f2;--soft:0 10px 30px rgba(15,61,46,.07);--soft-h:0 16px 40px rgba(15,61,46,.12)}
+body{background:#fffdf9}
+.btn{border-radius:999px;padding:13px 26px;transition:background .3s ease,color .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease}
+.btn-primary{box-shadow:0 6px 16px rgba(230,126,34,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(230,126,34,.34)}
+.btn-ghost:hover,.btn-line:hover{transform:translateY(-2px)}
+header.nav{border-bottom:0;box-shadow:0 4px 24px rgba(15,61,46,.06)}
+.brand img{border-radius:14px}
+.links a{border-bottom:0;padding:8px 14px;border-radius:999px;transition:background .25s,color .25s}
+.links a:hover{background:#eef5f0;color:var(--green)}
+.nav .btn{padding:10px 20px}
+.hero .bg::after{background:linear-gradient(90deg,rgba(14,52,39,.9) 0%,rgba(14,52,39,.7) 50%,rgba(14,52,39,.3) 100%)}
+.hero .wrap{padding-bottom:96px}
+.card-form{border-radius:24px;box-shadow:0 24px 60px rgba(8,36,26,.28)}
+.field input,.field select{border-radius:12px;border-color:#e6e1d4;background:#fdfcf8;padding:13px 14px;transition:border-color .25s,box-shadow .25s,background .25s}
+.field input:focus,.field select:focus{background:#fff}
+.seg button{border-radius:999px;border-color:#e6e1d4;background:#fdfcf8;transition:all .25s}
+.seg button:hover{border-color:var(--green-2)}
+.ok{border-radius:12px}
+.stats{background:transparent;border-bottom:0;margin-top:-44px;position:relative;z-index:2;padding:0 0 8px}
+.stats .wrap{background:#fff;border-radius:22px;box-shadow:var(--soft);padding:0 28px}
+.stat{border-left-color:var(--line)}
+.about .photo img{border-radius:28px}
+.about .photo figcaption{border-radius:16px;box-shadow:var(--soft)}
+.values span{background:#f3f8f4;border-color:transparent;padding:8px 16px}
+.levels{background:linear-gradient(#fcf9f2,#f6f1e4)}
+.lv{border:0;border-radius:24px;box-shadow:var(--soft);transition:transform .35s ease,box-shadow .35s ease}
+.lv:hover{transform:translateY(-6px);box-shadow:var(--soft-h)}
+.lv img{border-radius:0}
+.lv li{border-top-color:var(--line)}
+.lv a{display:inline-block;padding:10px 0;transition:transform .25s}
+.lv a:hover{transform:translateX(4px)}
+.tabs{border-bottom:0;gap:8px;padding:6px;background:#f5f1e6;border-radius:999px;width:max-content;max-width:100%}
+.tabs button{border-bottom:0;border-radius:999px;padding:10px 20px;transition:background .25s,color .25s,box-shadow .25s}
+.tabs button[aria-selected=true]{background:#fff;color:var(--green);box-shadow:0 3px 10px rgba(15,61,46,.1)}
+.panel.on{animation:soft-in .45s ease}
+@keyframes soft-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.step::before{background:#e9f2ec;color:var(--green)}
+.step::after{background:#e8e3d6}
+.method,.tier div{border:0;border-radius:20px;background:#f8f4ea}
+.tier div{box-shadow:none}
+.campus{background:linear-gradient(160deg,#164a38,#0f3d2e)}
+.mosaic{gap:14px}
+.mosaic figure{border-radius:20px}
+.mosaic figcaption{background:linear-gradient(transparent,rgba(8,30,22,.6))}
+.clubs{border-top-color:rgba(255,255,255,.14)}
+.club{border-bottom-color:rgba(255,255,255,.14)}
+.honors img{border-radius:28px;box-shadow:var(--soft)}
+.quote{border-left:0;background:#fbf6ea;border-radius:18px;padding:18px 22px}
+.tour{background:linear-gradient(#f6f1e4,#fcf9f2)}
+.tour .times{border:0;border-radius:16px;background:#fff;box-shadow:var(--soft)}
+.tour li{border-top-color:var(--line)}
+details{border-top-color:var(--line)}
+summary{transition:color .25s}
+summary:hover{color:var(--green-2)}
+.cta-band{background:linear-gradient(160deg,#164a38,#0f3d2e)}
+footer{background:#0d3226}
+.dock a,.dock button{transition:transform .25s ease,box-shadow .25s ease}
+.dock a:hover,.dock button:hover{transform:translateY(-3px) scale(1.04)}
+.modal{backdrop-filter:blur(4px);background:rgba(10,40,30,.5)}
+.modal .card-form{animation:soft-in .35s ease}
+@media(max-width:900px){.stats{margin-top:-28px}.stats .wrap{padding:0 20px}.tabs{width:auto;border-radius:22px}}
+@media(prefers-reduced-motion:reduce){.panel.on,.modal .card-form{animation:none}.btn,.lv{transition:none}}
 </style>
 </head>
 <body>
 
 <div class="top"><div class="wrap">
-  <span>Đường 4, số 99 Võ Nguyên Giáp, KĐT Waterfront City, Lê Chân, Hải Phòng</span>
+  <span>Đường 4, số 99 Võ Nguyên Giáp, KĐT Waterfront City, Phường Lê Chân, Hải Phòng</span>
   <span>Hotline <b>0971 021 515</b> · Ms. Thảo <b>0946 668 488</b></span>
 </div></div>
 
@@ -258,10 +323,10 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   <div class="bg" role="img" aria-label="Học sinh Ngôi Sao Hà Nội – Hải Phòng trong sân trường"></div>
   <div class="wrap">
     <div>
-      <p class="eyebrow" style="color:#f4b66b">Tuyển sinh năm học 2026 – 2027</p>
+      <p class="eyebrow" style="color:#f4b66b">Tuyển sinh năm học 2027 – 2028</p>
       <h1 style="margin-top:14px">Học thuật xuất sắc,<br><em>ngôi trường hạnh phúc.</em></h1>
       <p class="slogan">“Xuất sắc bằng nỗ lực – Trưởng thành trong yêu thương”</p>
-      <p class="sub">Kế thừa 15 năm di sản của Hệ thống Ngôi Sao Hà Nội, được Cognia (Hoa Kỳ) kiểm định chất lượng năm 2024. Trường liên cấp từ Tiểu học đến THPT tại Waterfront City, Hải Phòng.</p>
+      <p class="sub">Kế thừa 15 năm di sản của Hệ thống Ngôi Sao Hà Nội, được Cognia (Hoa Kỳ) kiểm định chất lượng năm 2024. Trường liên cấp từ Tiểu học đến THPT tại Waterfront City, Phường Lê Chân, Hải Phòng.</p>
       <div class="cta">
         <button class="btn btn-primary open-modal">Đăng ký tư vấn</button>
         <a class="btn btn-ghost" href="#school-tour">Đặt lịch School Tour</a>
@@ -301,7 +366,6 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
 <div class="stats"><div class="wrap">
   <div class="stat"><div class="n">15</div><div class="l">năm di sản Ngôi Sao Hà Nội</div></div>
   <div class="stat"><div class="n">13.400 m²</div><div class="l">khuôn viên Waterfront City</div></div>
-  <div class="stat"><div class="n">20+</div><div class="l">câu lạc bộ đa dạng</div></div>
   <div class="stat"><div class="n">561</div><div class="l">giải thưởng trong 5 tháng đầu năm</div></div>
 </div></div>
 
@@ -312,9 +376,9 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   </figure>
   <div class="reveal">
     <p class="eyebrow">Về chúng tôi</p>
-    <h2 class="title">Kỷ cương học thuật, không gian học đường hạnh phúc</h2>
-    <p class="lead" style="max-width:none">Ngôi Sao Hà Nội – Hải Phòng Campus là trường chuyên tư thục liên cấp trực thuộc Tập đoàn Giáo dục EQuest, kế thừa 15 năm đào tạo của Hệ thống Ngôi Sao Hà Nội (thành lập 2010).</p>
-    <p>Tọa lạc tại Khu đô thị sinh thái Waterfront City, nhà trường kiến tạo môi trường học tập khai phóng, nơi mỗi học sinh – các Hansers – được đồng hành để tự tin bứt phá bằng chính nỗ lực của mình.</p>
+    <h2 class="title">Kỷ cương học thuật, không gian học đường an toàn và hạnh phúc</h2>
+    <p class="lead" style="max-width:none">Ngôi Sao Hà Nội – Hải Phòng campus là trường chuyên tư thục liên cấp trực thuộc Tập đoàn Giáo dục EQuest, kế thừa 15 năm đào tạo của Hệ thống Ngôi Sao Hà Nội (thành lập 2010).</p>
+    <p>Tọa lạc tại Khu đô thị sinh thái Waterfront City, nhà trường kiến tạo môi trường học tập, nơi mỗi học sinh – các Hansers – được đồng hành để tự tin bứt phá bằng chính nỗ lực của mình.</p>
     <div class="values" aria-label="Năm giá trị cốt lõi"><span>Trung thực</span><span>Chủ động</span><span>Tôn trọng</span><span>Yêu thương</span><span>Xuất sắc</span></div>
   </div>
 </div></section>
@@ -325,41 +389,40 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   <div class="lv-grid">
     <article class="lv reveal">
       <img src="assets/campus_facility_2.jpg" alt="Khuôn viên khối Tiểu học" loading="lazy">
-      <div class="b"><span class="g">Lớp 1 – 5</span><h3>Tiểu học</h3>
-        <p>Trải nghiệm – Sáng tạo. Môi trường vui tươi khơi dậy trí tò mò và nếp tự lập.</p>
-        <ul><li>Toán tư duy &amp; khoa học trải nghiệm</li><li>Tiếng Anh chuẩn Cambridge, lớp chuyên Anh 1B0</li><li>Giáo dục cảm xúc SEL, đọc sách mỗi ngày</li></ul>
+      <div class="b"><span class="g">Lớp 1 – 5</span><h3>Tuyển sinh Tiểu học</h3>
+        <p>Tối ưu – Toàn diện</p>
+        <ul><li><b>Đối tượng:</b> học sinh sinh năm 2017 – 2021 (vào lớp 1 – lớp 5)</li><li>Hệ Ngôi Sao</li><li>Hệ chuyên Anh – B0</li><li>Hệ chuyên Toán – A0</li></ul>
         <a href="#tuyen-sinh" data-tab="t1">Tuyển sinh Lớp 1 →</a></div>
     </article>
     <article class="lv reveal">
       <img src="assets/campus_classroom_1.jpg" alt="Lớp học khối THCS" loading="lazy">
-      <div class="b"><span class="g">Lớp 6 – 9</span><h3>Trung học cơ sở</h3>
-        <p>Định hướng – Chuyên sâu. Rèn tư duy phản biện, công nghệ và AI có trách nhiệm.</p>
-        <ul><li>Khoa học bằng tiếng Anh, luyện thi HSG</li><li>STEM – Robotics &amp; AI Lab</li><li>Lộ trình vào THPT Chuyên và công lập top đầu</li></ul>
+      <div class="b"><span class="g">Lớp 6 – 9</span><h3>Tuyển sinh THCS</h3>
+        <p>Định hướng – Chuyên sâu</p>
+        <ul><li><b>Đối tượng:</b> học sinh sinh năm 2013 – 2016 (vào lớp 6 – lớp 9)</li><li>Hệ chuyên sâu: chuyên Toán, Tiếng Anh, Tin, KHTN</li><li>Dự án 9</li></ul>
         <a href="#tuyen-sinh" data-tab="t6">Tuyển sinh Lớp 6 →</a></div>
     </article>
     <article class="lv reveal">
       <img src="assets/campus_library_1.jpg" alt="Thư viện khối THPT" loading="lazy">
-      <div class="b"><span class="g">Lớp 10 – 12</span><h3>Trung học phổ thông</h3>
-        <p>Chuyên biệt – Hội nhập. Cá nhân hóa lộ trình và xây dựng hồ sơ năng lực.</p>
-        <ul><li>Tiếng Anh nâng cao, ôn IELTS/SAT trong chính khóa</li><li>Cố vấn 1-1 hồ sơ đại học và du học</li><li>Dự án khởi nghiệp, Leader in Me</li></ul>
+      <div class="b"><span class="g">Lớp 10 – 12</span><h3>Tuyển sinh THPT</h3>
+        <ul><li><b>Đối tượng:</b> học sinh sinh năm 2012 (vào lớp 10)</li><li>Tổ hợp môn chuẩn hóa theo ngành đích</li><li>HSA, IELTS, tiếng Anh quốc tế</li><li>Star Hub</li></ul>
         <a href="#tuyen-sinh" data-tab="t10">Tuyển sinh Lớp 10 →</a></div>
     </article>
   </div>
 </div></section>
 
 <section id="tuyen-sinh"><div class="wrap">
-  <p class="eyebrow">Thông tin chính thức 2026 – 2027</p>
+  <p class="eyebrow">Thông tin chính thức 2027 – 2028</p>
   <h2 class="title">Lộ trình tuyển sinh minh bạch cho từng khối lớp</h2>
   <div class="tabs" role="tablist" id="tabs">
     <button role="tab" aria-selected="true" data-tab="t1">Lớp 1</button>
     <button role="tab" aria-selected="false" data-tab="t6">Lớp 6</button>
     <button role="tab" aria-selected="false" data-tab="t10">Lớp 10</button>
-    <button role="tab" aria-selected="false" data-tab="tx">Tuyển ngang 2–11</button>
+    <button role="tab" aria-selected="false" data-tab="tx">Tuyển ngang 2–9</button>
     <button role="tab" aria-selected="false" data-tab="th">Học bổng</button>
   </div>
 
   <div class="panel on" id="t1" role="tabpanel">
-    <div class="head"><div><h3>Tuyển sinh Lớp 1</h3><p>Dành cho các bé sinh năm 2020. Khởi đầu vững vàng, tự tin và tràn ngập niềm vui đến trường.</p></div></div>
+    <div class="head"><div><h3>Tuyển sinh Lớp 1</h3><p>Dành cho các bé sinh năm 2021. Khởi đầu vững vàng, tự tin và tràn ngập niềm vui đến trường.</p></div></div>
     <div class="steps">
       <div class="step"><b>Đăng ký &amp; nộp hồ sơ</b><span>Đăng ký trực tuyến và gửi video dự tuyển theo hướng dẫn.</span></div>
       <div class="step"><b>CLB / đánh giá năng lực</b><span>Bé tham gia CLB The Little Hansers hoặc buổi đánh giá phù hợp lứa tuổi.</span></div>
@@ -374,7 +437,7 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   </div>
 
   <div class="panel" id="t6" role="tabpanel">
-    <div class="head"><div><h3>Tuyển sinh Lớp 6</h3><p>Dành cho học sinh hoàn thành Tiểu học (sinh năm 2015). Bứt phá năng lực học thuật.</p></div></div>
+    <div class="head"><div><h3>Tuyển sinh Lớp 6</h3><p>Dành cho học sinh hoàn thành Tiểu học (sinh năm 2016). Bứt phá năng lực học thuật.</p></div></div>
     <div class="steps">
       <div class="step"><b>Đăng ký nộp hồ sơ</b><span>Nộp học bạ tiểu học và bản sao giải thưởng học sinh giỏi.</span></div>
       <div class="step"><b>Xét tuyển / ĐGNL</b><span>Phỏng vấn tuyển thẳng hoặc bài kiểm tra Toán, Tiếng Việt, Tiếng Anh.</span></div>
@@ -389,7 +452,7 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   </div>
 
   <div class="panel" id="t10" role="tabpanel">
-    <div class="head"><div><h3>Tuyển sinh Lớp 10</h3><p>Dành cho học sinh tốt nghiệp THCS (sinh năm 2011). Xây dựng hồ sơ học thuật, sẵn sàng vào đại học hàng đầu.</p></div></div>
+    <div class="head"><div><h3>Tuyển sinh Lớp 10</h3><p>Dành cho học sinh tốt nghiệp THCS (sinh năm 2012). Xây dựng hồ sơ học thuật, sẵn sàng vào đại học hàng đầu.</p></div></div>
     <div class="steps">
       <div class="step"><b>Đăng ký &amp; chọn ban</b><span>Ban Khoa học Tự nhiên, Khoa học Xã hội hoặc Song bằng.</span></div>
       <div class="step"><b>Xét tuyển theo 4 phương thức</b><span>Tuyển thẳng, ĐGNL, điểm thi THPT Chuyên, điểm thi vào 10 Sở GD&amp;ĐT.</span></div>
@@ -404,7 +467,7 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   </div>
 
   <div class="panel" id="tx" role="tabpanel">
-    <div class="head"><div><h3>Tuyển sinh bổ sung · Lớp 2 – 11</h3><p>Dành cho học sinh có nguyện vọng chuyển trường về Ngôi Sao Hà Nội – Hải Phòng.</p></div></div>
+    <div class="head"><div><h3>Tuyển sinh bổ sung · Lớp 2 – 9</h3><p>Dành cho học sinh có nguyện vọng chuyển trường về Ngôi Sao Hà Nội – Hải Phòng.</p></div></div>
     <div class="steps">
       <div class="step"><b>Nộp hồ sơ dự tuyển</b><span>Bảng điểm/học bạ gần nhất kèm đơn xin dự tuyển.</span></div>
       <div class="step"><b>Tham gia ĐGNL</b><span>Khảo sát kiến thức các môn trọng tâm theo khối lớp.</span></div>
@@ -413,7 +476,7 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
     </div>
     <div class="methods">
       <div class="method"><span class="k">Lớp 2 · 3 · 4 · 5</span><h4>Khối Tiểu học</h4><ul><li>Toán: tư duy logic, giải quyết vấn đề</li><li>Tiếng Việt: cảm thụ, diễn đạt, chính tả</li><li>Tiếng Anh: 4 kỹ năng theo chuẩn Cambridge</li></ul><p style="margin-top:10px">Nhà trường không phát hành đề mẫu hay tổ chức lớp ôn luyện.</p></div>
-      <div class="method"><span class="k">Lớp 7 · 8 · 9 · 11</span><h4>Khối Trung học</h4><ul><li>Toán: đại số, hình học, bài toán thực tế</li><li>Ngữ văn: nghị luận xã hội, nghị luận văn học</li><li>Tiếng Anh: ngữ pháp, từ vựng, phỏng vấn giao tiếp</li></ul><p style="margin-top:10px">Xếp lớp căn cứ điểm khảo sát và chỉ tiêu còn lại của từng lớp.</p></div>
+      <div class="method"><span class="k">Lớp 7 · 8 · 9</span><h4>Khối Trung học</h4><ul><li>Toán: đại số, hình học, bài toán thực tế</li><li>Ngữ văn: nghị luận xã hội, nghị luận văn học</li><li>Tiếng Anh: ngữ pháp, từ vựng, phỏng vấn giao tiếp</li></ul><p style="margin-top:10px">Xếp lớp căn cứ điểm khảo sát và chỉ tiêu còn lại của từng lớp.</p></div>
     </div>
     <div class="row-cta"><button class="btn btn-primary open-modal">Đăng ký kiểm tra bổ sung</button><small>Hotline 0971 021 515</small></div>
   </div>
@@ -529,12 +592,12 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   <div class="g">
     <div><h5>Ngôi Sao Hà Nội – Hải Phòng</h5><p>Trường chuyên tư thục chất lượng cao trực thuộc Tập đoàn Giáo dục EQuest. Kiểm định chất lượng bởi Cognia (Hoa Kỳ) năm 2024.</p></div>
     <div><h5>Liên hệ</h5><ul>
-      <li>Đường 4, số 99 Võ Nguyên Giáp, KĐT Waterfront City, Lê Chân, Hải Phòng</li>
+      <li>Đường 4, số 99 Võ Nguyên Giáp, KĐT Waterfront City, Phường Lê Chân, Hải Phòng</li>
       <li>Hotline <a href="tel:0971021515">0971 021 515</a> · Ms. Thảo <a href="tel:0946668488">0946 668 488</a></li>
       <li><a href="mailto:tuyensinh@ngoisaohaiphong.edu.vn">tuyensinh@ngoisaohaiphong.edu.vn</a></li></ul></div>
     <div><h5>Điều hướng</h5><ul><li><a href="#tuyen-sinh">Tuyển sinh</a></li><li><a href="#cap-hoc">Ba cấp học</a></li><li><a href="#co-so">Cơ sở vật chất</a></li><li><a href="#school-tour">School Tour</a></li><li><a href="https://ngoisaohaiphong.edu.vn" rel="noopener">ngoisaohaiphong.edu.vn</a></li></ul></div>
   </div>
-  <p class="copy">© 2026 Trường Ngôi Sao Hà Nội – Hải Phòng Campus · Hệ thống Ngôi Sao Hà Nội.</p>
+  <p class="copy">© 2026 Trường Ngôi Sao Hà Nội – Hải Phòng campus · Hệ thống Ngôi Sao Hà Nội.</p>
 </div></footer>
 
 <div class="dock">
@@ -547,7 +610,7 @@ footer .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,
   <form class="card-form lead-form" novalidate>
     <button class="x" type="button" id="close" aria-label="Đóng">&times;</button>
     <h3>Đăng ký tư vấn tuyển sinh</h3>
-    <p class="hint">Năm học 2026–2027 · Ban Tuyển sinh liên hệ lại trong giờ làm việc.</p>
+    <p class="hint">Năm học 2027 – 2028 · Ban Tuyển sinh liên hệ lại trong giờ làm việc.</p>
     <div class="field"><label for="n3">Họ tên phụ huynh</label><input id="n3" name="name" required autocomplete="name"></div>
     <div class="field"><label for="p3">Số điện thoại</label><input id="p3" name="phone" type="tel" required pattern="(\+84|0)[0-9]{9,10}" autocomplete="tel"></div>
     <div class="field"><label for="e3">Email (không bắt buộc)</label><input id="e3" name="email" type="email" autocomplete="email"></div>
