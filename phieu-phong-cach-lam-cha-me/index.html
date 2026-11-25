@@ -31,8 +31,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.6;
   -webkit-text-size-adjust: 100%;
 }
 h1, h2, h3 { font-family: var(--font-display); color: var(--forest); margin: 0; text-wrap: balance; line-height: 1.25; }
@@ -41,30 +41,31 @@ button, input, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 .top { background: var(--forest); color: #fff; }
-.top-in { max-width: 600px; margin: 0 auto; padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
-.brand { font-weight: 700; font-size: 14px; letter-spacing: .02em; }
-.brand small { display: block; font-weight: 400; color: var(--mist); font-size: 12px; letter-spacing: 0; }
-.wrap { max-width: 600px; margin: 0 auto; padding: 20px 18px 56px; display: flex; flex-direction: column; gap: 16px; }
+body.in-quiz .top { display: none; }
+.top-in { max-width: 640px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+.brand { font-weight: 700; font-size: 16px; letter-spacing: .02em; }
+.brand small { display: block; font-weight: 400; color: var(--mist); font-size: 14px; letter-spacing: 0; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 16px 14px 56px; display: flex; flex-direction: column; gap: 16px; }
 
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px; }
 .card + .card { margin-top: 0; }
 
 /* Intro */
-.hero h1 { font-size: 28px; }
+.hero h1 { font-size: 32px; }
 .hero .lead { color: var(--muted); margin-top: 8px; }
 .facts { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 10px; }
-.facts li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.facts li { display: flex; gap: 12px; align-items: flex-start; font-size: 18px; }
 .facts li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 50%; background: var(--gold); }
 .field { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
-.field > label, .field > .lab { font-weight: 700; font-size: 15px; }
+.field > label, .field > .lab { font-weight: 700; font-size: 18px; }
 .field .opt { font-weight: 400; color: var(--muted); }
-.input { width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; min-height: 48px; }
+.input { width: 100%; padding: 14px 16px; border: 2px solid var(--line); border-radius: 14px; background: #fff; min-height: 56px; font-size: 18px; }
 .input:focus { border-color: var(--forest); outline: none; box-shadow: 0 0 0 3px rgba(222,180,72,.5); }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { padding: 10px 16px; min-height: 44px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { padding: 12px 20px; min-height: 52px; border-radius: 999px; border: 2px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 18px; }
 .chip[aria-checked="true"] { background: var(--forest); border-color: var(--forest); color: #fff; }
-.hint { font-size: 13.5px; color: var(--muted); }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 22px; border-radius: 14px; border: 0; cursor: pointer; font-weight: 700; font-size: 16px; background: var(--gold); color: var(--forest); }
+.hint { font-size: 16px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 60px; padding: 14px 24px; border-radius: 16px; border: 0; cursor: pointer; font-weight: 700; font-size: 19px; background: var(--gold); color: var(--forest); }
 .btn:hover { background: #E6BE5A; }
 .btn[disabled] { background: #E3E8E5; color: #7A8A83; cursor: not-allowed; }
 .btn.ghost { background: transparent; border: 1.5px solid var(--forest); color: var(--forest); }
@@ -73,39 +74,39 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* Quiz */
 .qtop { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.back { background: none; border: 0; padding: 10px 6px; min-height: 44px; font-weight: 600; color: var(--forest); cursor: pointer; }
+.back { background: none; border: 0; padding: 10px 8px; min-height: 52px; font-size: 18px; font-weight: 600; color: var(--forest); cursor: pointer; }
 .back[disabled] { visibility: hidden; }
-.count { font-weight: 700; color: var(--forest); font-variant-numeric: tabular-nums; }
-.bar { height: 8px; background: var(--mist); border-radius: 999px; overflow: hidden; }
+.count { font-weight: 700; font-size: 18px; color: var(--forest); font-variant-numeric: tabular-nums; }
+.bar { height: 10px; background: var(--mist); border-radius: 999px; overflow: hidden; }
 .bar > i { display: block; height: 100%; width: 0; background: var(--gold); border-radius: 999px; transition: width .25s ease; }
-.stem { font-size: 13.5px; color: var(--muted); font-weight: 600; text-transform: none; }
-.qtext { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.35; color: var(--forest); margin-top: 8px; text-wrap: pretty; min-height: 90px; }
-.answers { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
-.ans { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; min-height: 56px; padding: 10px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; }
-.ans .n { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--mist); color: var(--forest); display: grid; place-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stem { font-size: 16px; color: var(--muted); font-weight: 600; text-transform: none; }
+.qtext { font-family: var(--font-display); font-weight: 600; font-size: 25px; line-height: 1.35; color: var(--forest); margin-top: 10px; text-wrap: pretty; min-height: 100px; }
+.answers { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.ans { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; min-height: 64px; padding: 10px 14px; border-radius: 16px; border: 2px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 19px; }
+.ans .n { flex: none; width: 38px; height: 38px; font-size: 18px; border-radius: 50%; background: var(--mist); color: var(--forest); display: grid; place-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
 .ans:hover { border-color: var(--forest-2); }
 .ans[aria-checked="true"] { background: var(--forest); border-color: var(--forest); color: #fff; }
 .ans[aria-checked="true"] .n { background: var(--gold); color: var(--forest); }
-.tiny { font-size: 13px; color: var(--muted); text-align: center; }
+.tiny { font-size: 15px; color: var(--muted); text-align: center; }
 
 /* Result */
 .res-head { background: var(--forest); color: #fff; border: 0; }
-.res-head h1 { color: #fff; font-size: 26px; }
-.res-head .who { color: var(--mist); font-size: 14px; margin-bottom: 6px; }
-.res-head .headline { color: var(--gold); font-family: var(--font-display); font-weight: 600; font-size: 20px; margin-top: 14px; }
+.res-head h1 { color: #fff; font-size: 29px; }
+.res-head .who { color: var(--mist); font-size: 16px; margin-bottom: 6px; }
+.res-head .headline { color: var(--gold); font-family: var(--font-display); font-weight: 600; font-size: 23px; margin-top: 14px; }
 .res-head p.body { color: #EAF2EE; margin-top: 8px; }
-.sec-title { font-size: 20px; }
-.sec-sub { color: var(--muted); font-size: 14.5px; margin-top: 4px; }
+.sec-title { font-size: 24px; }
+.sec-sub { color: var(--muted); font-size: 17px; margin-top: 6px; }
 .rows { display: flex; flex-direction: column; gap: 18px; margin-top: 16px; }
 .row .rh { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.row .rn { font-weight: 700; }
-.row .rv { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.row .rn { font-weight: 700; font-size: 19px; }
+.row .rv { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 19px; white-space: nowrap; }
 .row .rv small { font-weight: 600; color: var(--muted); }
-.row .rd { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
-.track { position: relative; height: 12px; border-radius: 999px; background: #E7EFEB; margin-top: 8px; }
+.row .rd { font-size: 16px; color: var(--muted); margin-top: 2px; }
+.track { position: relative; height: 14px; border-radius: 999px; background: #E7EFEB; margin-top: 8px; }
 .track > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; min-width: 6px; }
-.ticks { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
-.grp { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 20px; }
+.ticks { display: flex; justify-content: space-between; font-size: 14px; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.grp { font-size: 15px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 20px; }
 .grp:first-of-type { margin-top: 14px; }
 .str { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
 .str div { border-left: 4px solid var(--good); padding: 2px 0 2px 12px; }
@@ -114,18 +115,18 @@ button, input, textarea { font: inherit; color: inherit; }
 .sub { font-weight: 700; margin-top: 16px; }
 .sub:first-child { margin-top: 0; }
 .focus { background: #FFF9E8; border-color: #EBD9A4; }
-.focus .label { display: inline-block; font-size: 12.5px; font-weight: 700; background: var(--gold); color: var(--forest); padding: 3px 10px; border-radius: 999px; }
+.focus .label { display: inline-block; font-size: 15px; font-weight: 700; background: var(--gold); color: var(--forest); padding: 3px 10px; border-radius: 999px; }
 .focus h2 { margin-top: 10px; }
-.stage-tip { margin-top: 14px; padding: 12px 14px; background: #fff; border: 1px solid #EBD9A4; border-radius: 12px; font-size: 15px; }
+.stage-tip { margin-top: 14px; padding: 12px 14px; background: #fff; border: 1px solid #EBD9A4; border-radius: 12px; font-size: 18px; }
 .care { background: #EEF5F2; border-color: var(--mist); }
-textarea.input { min-height: 96px; resize: vertical; }
+textarea.input { min-height: 120px; resize: vertical; }
 .actions { display: flex; flex-direction: column; gap: 10px; }
-.note { font-size: 13px; color: var(--muted); }
+.note { font-size: 15px; color: var(--muted); }
 .note p + p { margin-top: 6px; }
-.toast { font-size: 14px; font-weight: 600; color: var(--good); min-height: 20px; }
+.toast { font-size: 16px; font-weight: 600; color: var(--good); min-height: 20px; }
 
 @media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
-@media (min-width: 640px) { .hero h1 { font-size: 32px; } .qtext { font-size: 24px; } }
+@media (min-width: 640px) { .hero h1 { font-size: 36px; } .qtext { font-size: 27px; } }
 </style>
 </head>
 <body>
@@ -180,7 +181,7 @@ textarea.input { min-height: 96px; resize: vertical; }
       <p class="qtext" id="q-text"></p>
       <div class="answers" id="q-answers" role="radiogroup" aria-label="Mức độ thường xuyên"></div>
     </div>
-    <p class="tiny" style="margin-top:12px">Chạm vào một mức để sang câu tiếp theo. Có thể bấm phím 1 đến 5 trên bàn phím.</p>
+    <p class="tiny" style="margin-top:12px">Chạm vào một mức để sang câu tiếp theo.</p>
   </section>
 
   <!-- 3. Kết quả -->
@@ -192,11 +193,11 @@ textarea.input { min-height: 96px; resize: vertical; }
 /* CORE-START */
 const QUESTIONS = [
   "Tôi quan tâm và đáp lại cảm xúc hoặc nhu cầu của con.",
-  "Tôi sử dụng hình phạt thể chất để kỷ luật con.",
+  "Tôi sử dụng hình phạt thân thể để kỷ luật con.",
   "Tôi cân nhắc mong muốn của con trước khi yêu cầu con thực hiện điều gì đó.",
   "Khi con hỏi vì sao phải làm theo yêu cầu, tôi thường trả lời theo kiểu “vì cha/mẹ đã nói vậy”.",
   "Tôi giải thích cho con biết cảm xúc của tôi trước hành vi phù hợp hoặc chưa phù hợp của con.",
-  "Tôi tát hoặc đánh con khi con không nghe lời.",
+  "Tôi đánh đòn khi con không vâng lời.",
   "Tôi khuyến khích con chia sẻ những vấn đề khiến con lo lắng hoặc khó khăn.",
   "Tôi cảm thấy khó khăn khi đặt ra kỷ luật hoặc giới hạn cho con.",
   "Tôi khuyến khích con bày tỏ suy nghĩ, kể cả khi con không đồng ý với tôi.",
@@ -220,9 +221,9 @@ const QUESTIONS = [
   "Tôi dành thời gian gần gũi, ấm áp và chia sẻ riêng với con.",
   "Tôi phạt con bằng cách bắt con ở riêng một chỗ mà ít hoặc không giải thích lý do.",
   "Tôi giúp con hiểu tác động của hành vi bằng cách cùng con trao đổi về hậu quả của hành động đó.",
-  "Tôi quát hoặc hét vào con khi con cư xử không đúng.",
+  "Tôi la rầy hoặc chỉ trích khi hành vi của con không đạt như tôi mong đợi.",
   "Tôi giải thích những hậu quả có thể xảy ra từ hành vi của con.",
-  "Tôi sử dụng hình phạt thể chất khi con không tuân theo yêu cầu."
+  "Tôi sử dụng hình phạt thân thể khi con không tuân theo yêu cầu."
 ];
 const SCALE = ["Không bao giờ", "Hiếm khi", "Thỉnh thoảng", "Thường xuyên", "Luôn luôn"];
 
@@ -287,8 +288,8 @@ const DIM_INFO = {
   warmth:    { name: "Kết nối, ấm áp và hỗ trợ", desc: "Quan tâm, an ủi, khen ngợi, dành thời gian riêng cho con." },
   reasoning: { name: "Giải thích lý do", desc: "Nói rõ lý do của quy tắc, cảm xúc của ba mẹ và hậu quả của hành vi." },
   autonomy:  { name: "Khuyến khích tự chủ, tham gia", desc: "Lắng nghe ý con, cho con tham gia quyết định và đặt quy tắc." },
-  physical:  { name: "Cưỡng ép thể chất", desc: "Đánh, tát hoặc dùng sức mạnh cơ thể để con nghe lời." },
-  verbal:    { name: "Thù địch bằng lời nói", desc: "Quát, hét, tranh cãi giận dữ hoặc dùng lời gay gắt." },
+  physical:  { name: "Cưỡng ép thân thể", desc: "Đánh, tát hoặc dùng sức mạnh cơ thể để con nghe lời." },
+  verbal:    { name: "Thù địch bằng lời nói", desc: "Quát, la rầy, chỉ trích, tranh cãi giận dữ hoặc dùng lời gay gắt." },
   punitive:  { name: "Phạt mà thiếu giải thích", desc: "Phạt ít trao đổi, hoặc tách con ra một mình mà không nói lý do." },
   indulgent: { name: "Nuông chiều, thiếu nhất quán", desc: "Nhượng bộ khi con làm ầm, đe dọa rồi bỏ qua, khó giữ giới hạn." }
 };
@@ -450,6 +451,7 @@ chipGroup("g-stage", STAGES, "stage", refreshStart);
 $("f-name").addEventListener("input", e => { state.name = e.target.value.trim(); });
 
 function show(which) {
+  document.body.classList.toggle("in-quiz", which === "s-quiz");
   ["s-intro", "s-quiz", "s-result"].forEach(id => { $(id).hidden = id !== which; });
   window.scrollTo(0, 0);
 }
@@ -465,6 +467,7 @@ function renderQ() {
   $("q-answers").innerHTML = SCALE.map((l, k) =>
     `<button type="button" class="ans" role="radio" aria-checked="${cur === k + 1}" data-v="${k + 1}"><span class="n">${k + 1}</span><span>${l}</span></button>`).join("");
   state.lock = false;
+  window.scrollTo(0, 0);
 }
 function choose(v) {
   if (state.lock) return;
