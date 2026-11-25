@@ -31,8 +31,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.6;
   -webkit-text-size-adjust: 100%;
 }
 h1, h2, h3 { font-family: var(--font-display); color: var(--forest); margin: 0; text-wrap: balance; line-height: 1.25; }
@@ -41,30 +41,31 @@ button, input, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 .top { background: var(--forest); color: #fff; }
-.top-in { max-width: 600px; margin: 0 auto; padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
-.brand { font-weight: 700; font-size: 14px; letter-spacing: .02em; }
-.brand small { display: block; font-weight: 400; color: var(--mist); font-size: 12px; letter-spacing: 0; }
-.wrap { max-width: 600px; margin: 0 auto; padding: 20px 18px 56px; display: flex; flex-direction: column; gap: 16px; }
+body.in-quiz .top { display: none; }
+.top-in { max-width: 640px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+.brand { font-weight: 700; font-size: 16px; letter-spacing: .02em; }
+.brand small { display: block; font-weight: 400; color: var(--mist); font-size: 14px; letter-spacing: 0; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 16px 14px 56px; display: flex; flex-direction: column; gap: 16px; }
 
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px; }
 .card + .card { margin-top: 0; }
 
 /* Intro */
-.hero h1 { font-size: 28px; }
+.hero h1 { font-size: 32px; }
 .hero .lead { color: var(--muted); margin-top: 8px; }
 .facts { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 10px; }
-.facts li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.facts li { display: flex; gap: 12px; align-items: flex-start; font-size: 18px; }
 .facts li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 50%; background: var(--gold); }
 .field { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
-.field > label, .field > .lab { font-weight: 700; font-size: 15px; }
+.field > label, .field > .lab { font-weight: 700; font-size: 18px; }
 .field .opt { font-weight: 400; color: var(--muted); }
-.input { width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; min-height: 48px; }
+.input { width: 100%; padding: 14px 16px; border: 2px solid var(--line); border-radius: 14px; background: #fff; min-height: 56px; font-size: 18px; }
 .input:focus { border-color: var(--forest); outline: none; box-shadow: 0 0 0 3px rgba(222,180,72,.5); }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { padding: 10px 16px; min-height: 44px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { padding: 12px 20px; min-height: 52px; border-radius: 999px; border: 2px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 18px; }
 .chip[aria-checked="true"] { background: var(--forest); border-color: var(--forest); color: #fff; }
-.hint { font-size: 13.5px; color: var(--muted); }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 22px; border-radius: 14px; border: 0; cursor: pointer; font-weight: 700; font-size: 16px; background: var(--gold); color: var(--forest); }
+.hint { font-size: 16px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 60px; padding: 14px 24px; border-radius: 16px; border: 0; cursor: pointer; font-weight: 700; font-size: 19px; background: var(--gold); color: var(--forest); }
 .btn:hover { background: #E6BE5A; }
 .btn[disabled] { background: #E3E8E5; color: #7A8A83; cursor: not-allowed; }
 .btn.ghost { background: transparent; border: 1.5px solid var(--forest); color: var(--forest); }
@@ -73,39 +74,39 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* Quiz */
 .qtop { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.back { background: none; border: 0; padding: 10px 6px; min-height: 44px; font-weight: 600; color: var(--forest); cursor: pointer; }
+.back { background: none; border: 0; padding: 10px 8px; min-height: 52px; font-size: 18px; font-weight: 600; color: var(--forest); cursor: pointer; }
 .back[disabled] { visibility: hidden; }
-.count { font-weight: 700; color: var(--forest); font-variant-numeric: tabular-nums; }
-.bar { height: 8px; background: var(--mist); border-radius: 999px; overflow: hidden; }
+.count { font-weight: 700; font-size: 18px; color: var(--forest); font-variant-numeric: tabular-nums; }
+.bar { height: 10px; background: var(--mist); border-radius: 999px; overflow: hidden; }
 .bar > i { display: block; height: 100%; width: 0; background: var(--gold); border-radius: 999px; transition: width .25s ease; }
-.stem { font-size: 13.5px; color: var(--muted); font-weight: 600; text-transform: none; }
-.qtext { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.35; color: var(--forest); margin-top: 8px; text-wrap: pretty; min-height: 90px; }
-.answers { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
-.ans { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; min-height: 56px; padding: 10px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; }
-.ans .n { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--mist); color: var(--forest); display: grid; place-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stem { font-size: 16px; color: var(--muted); font-weight: 600; text-transform: none; }
+.qtext { font-family: var(--font-display); font-weight: 600; font-size: 25px; line-height: 1.35; color: var(--forest); margin-top: 10px; text-wrap: pretty; min-height: 100px; }
+.answers { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.ans { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; min-height: 64px; padding: 10px 14px; border-radius: 16px; border: 2px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 19px; }
+.ans .n { flex: none; width: 38px; height: 38px; font-size: 18px; border-radius: 50%; background: var(--mist); color: var(--forest); display: grid; place-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
 .ans:hover { border-color: var(--forest-2); }
 .ans[aria-checked="true"] { background: var(--forest); border-color: var(--forest); color: #fff; }
 .ans[aria-checked="true"] .n { background: var(--gold); color: var(--forest); }
-.tiny { font-size: 13px; color: var(--muted); text-align: center; }
+.tiny { font-size: 15px; color: var(--muted); text-align: center; }
 
 /* Result */
 .res-head { background: var(--forest); color: #fff; border: 0; }
-.res-head h1 { color: #fff; font-size: 26px; }
-.res-head .who { color: var(--mist); font-size: 14px; margin-bottom: 6px; }
-.res-head .headline { color: var(--gold); font-family: var(--font-display); font-weight: 600; font-size: 20px; margin-top: 14px; }
+.res-head h1 { color: #fff; font-size: 29px; }
+.res-head .who { color: var(--mist); font-size: 16px; margin-bottom: 6px; }
+.res-head .headline { color: var(--gold); font-family: var(--font-display); font-weight: 600; font-size: 23px; margin-top: 14px; }
 .res-head p.body { color: #EAF2EE; margin-top: 8px; }
-.sec-title { font-size: 20px; }
-.sec-sub { color: var(--muted); font-size: 14.5px; margin-top: 4px; }
+.sec-title { font-size: 24px; }
+.sec-sub { color: var(--muted); font-size: 17px; margin-top: 6px; }
 .rows { display: flex; flex-direction: column; gap: 18px; margin-top: 16px; }
 .row .rh { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.row .rn { font-weight: 700; }
-.row .rv { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.row .rn { font-weight: 700; font-size: 19px; }
+.row .rv { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 19px; white-space: nowrap; }
 .row .rv small { font-weight: 600; color: var(--muted); }
-.row .rd { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
-.track { position: relative; height: 12px; border-radius: 999px; background: #E7EFEB; margin-top: 8px; }
+.row .rd { font-size: 16px; color: var(--muted); margin-top: 2px; }
+.track { position: relative; height: 14px; border-radius: 999px; background: #E7EFEB; margin-top: 8px; }
 .track > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; min-width: 6px; }
-.ticks { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
-.grp { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 20px; }
+.ticks { display: flex; justify-content: space-between; font-size: 14px; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.grp { font-size: 15px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 20px; }
 .grp:first-of-type { margin-top: 14px; }
 .str { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
 .str div { border-left: 4px solid var(--good); padding: 2px 0 2px 12px; }
@@ -114,25 +115,25 @@ button, input, textarea { font: inherit; color: inherit; }
 .sub { font-weight: 700; margin-top: 16px; }
 .sub:first-child { margin-top: 0; }
 .focus { background: #FFF9E8; border-color: #EBD9A4; }
-.focus .label { display: inline-block; font-size: 12.5px; font-weight: 700; background: var(--gold); color: var(--forest); padding: 3px 10px; border-radius: 999px; }
+.focus .label { display: inline-block; font-size: 15px; font-weight: 700; background: var(--gold); color: var(--forest); padding: 3px 10px; border-radius: 999px; }
 .focus h2 { margin-top: 10px; }
-.stage-tip { margin-top: 14px; padding: 12px 14px; background: #fff; border: 1px solid #EBD9A4; border-radius: 12px; font-size: 15px; }
+.stage-tip { margin-top: 14px; padding: 12px 14px; background: #fff; border: 1px solid #EBD9A4; border-radius: 12px; font-size: 18px; }
 .care { background: #EEF5F2; border-color: var(--mist); }
-textarea.input { min-height: 96px; resize: vertical; }
+textarea.input { min-height: 120px; resize: vertical; }
 .actions { display: flex; flex-direction: column; gap: 10px; }
-.note { font-size: 13px; color: var(--muted); }
+.note { font-size: 15px; color: var(--muted); }
 .note p + p { margin-top: 6px; }
-.toast { font-size: 14px; font-weight: 600; color: var(--good); min-height: 20px; }
+.toast { font-size: 16px; font-weight: 600; color: var(--good); min-height: 20px; }
 
 @media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
-@media (min-width: 640px) { .hero h1 { font-size: 32px; } .qtext { font-size: 24px; } }
+@media (min-width: 640px) { .hero h1 { font-size: 36px; } .qtext { font-size: 27px; } }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="top-in">
     <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="#DEB448" d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 16.9l-6 3.4 1.3-6.6L2.4 9.1l6.7-.8z"/></svg>
-    <div class="brand">Ngôi Sao Hà Nội · Hải Phòng<small>Đồng hành cùng phụ huynh</small></div>
+    <div class="brand">Ngôi Sao Hà Nội · Hải Phòng<small>Đồng hành cùng Quý phụ huynh</small></div>
   </div>
 </header>
 
@@ -141,26 +142,26 @@ textarea.input { min-height: 96px; resize: vertical; }
   <!-- 1. Giới thiệu -->
   <section id="s-intro" class="card hero">
     <h1>Phong cách đồng hành cùng con</h1>
-    <p class="lead">Phiếu tự đánh giá dành cho phụ huynh. 32 câu, khoảng 6 phút.</p>
+    <p class="lead">Kính gửi Quý phụ huynh. Đây là phiếu tự đánh giá gồm 32 câu, khoảng 6 phút.</p>
     <ul class="facts">
-      <li>Trả lời theo điều bạn thực sự làm trong 3 tháng gần đây, không theo điều bạn nghĩ một phụ huynh lý tưởng nên làm.</li>
+      <li>Trả lời theo điều ba mẹ thực sự làm trong 3 tháng gần đây, không theo điều ba mẹ nghĩ một phụ huynh lý tưởng nên làm.</li>
       <li>Không có câu đúng hay sai. Kết quả không dùng để đánh giá hay xếp hạng phụ huynh.</li>
-      <li>Ngay sau câu cuối, bạn nhận kết quả riêng: điểm mạnh, điều nên chú ý và gợi ý thử trong 7 ngày.</li>
-      <li>Câu trả lời được xử lý ngay trên điện thoại của bạn. Nhà trường không nhận được dữ liệu nào.</li>
+      <li>Ngay sau câu cuối, ba mẹ nhận kết quả riêng: điểm mạnh, điều nên chú ý và gợi ý thử trong 7 ngày.</li>
+      <li>Câu trả lời được xử lý ngay trên điện thoại của ba mẹ. Nhà trường không nhận được dữ liệu nào.</li>
     </ul>
 
     <div class="field">
-      <label for="f-name">Bạn muốn được gọi là gì? <span class="opt">(không bắt buộc)</span></label>
+      <label for="f-name">Ba mẹ muốn được gọi là gì? <span class="opt">(không bắt buộc)</span></label>
       <input id="f-name" class="input" type="text" maxlength="30" autocomplete="off" placeholder="Ví dụ: chị Lan">
     </div>
     <div class="field" role="radiogroup" aria-labelledby="l-role">
-      <span class="lab" id="l-role">Bạn là <span class="opt">(không bắt buộc)</span></span>
+      <span class="lab" id="l-role">Người điền phiếu là <span class="opt">(không bắt buộc)</span></span>
       <div class="chips" id="g-role"></div>
     </div>
     <div class="field" role="radiogroup" aria-labelledby="l-stage">
       <span class="lab" id="l-stage">Con đang học</span>
       <div class="chips" id="g-stage"></div>
-      <p class="hint">Nếu bạn có nhiều con, hãy nghĩ đến một bạn cụ thể và trả lời cho bạn ấy.</p>
+      <p class="hint">Nếu anh chị có nhiều con, xin hãy nghĩ đến một cháu cụ thể và trả lời cho cháu.</p>
     </div>
     <div class="field">
       <button class="btn full" id="b-start" type="button" disabled>Bắt đầu làm phiếu</button>
@@ -176,11 +177,11 @@ textarea.input { min-height: 96px; resize: vertical; }
     </div>
     <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="32" aria-valuenow="0" id="q-bar"><i></i></div>
     <div class="card" style="margin-top:14px">
-      <p class="stem">Trong 3 tháng gần đây, bạn làm điều này thường xuyên đến mức nào?</p>
+      <p class="stem">Trong 3 tháng gần đây, ba mẹ làm điều này thường xuyên đến mức nào?</p>
       <p class="qtext" id="q-text"></p>
       <div class="answers" id="q-answers" role="radiogroup" aria-label="Mức độ thường xuyên"></div>
     </div>
-    <p class="tiny" style="margin-top:12px">Chạm vào một mức để sang câu tiếp theo. Có thể bấm phím 1 đến 5 trên bàn phím.</p>
+    <p class="tiny" style="margin-top:12px">Chạm vào một mức để sang câu tiếp theo.</p>
   </section>
 
   <!-- 3. Kết quả -->
@@ -192,11 +193,11 @@ textarea.input { min-height: 96px; resize: vertical; }
 /* CORE-START */
 const QUESTIONS = [
   "Tôi quan tâm và đáp lại cảm xúc hoặc nhu cầu của con.",
-  "Tôi sử dụng hình phạt thể chất để kỷ luật con.",
+  "Tôi sử dụng hình phạt thân thể để kỷ luật con.",
   "Tôi cân nhắc mong muốn của con trước khi yêu cầu con thực hiện điều gì đó.",
   "Khi con hỏi vì sao phải làm theo yêu cầu, tôi thường trả lời theo kiểu “vì cha/mẹ đã nói vậy”.",
   "Tôi giải thích cho con biết cảm xúc của tôi trước hành vi phù hợp hoặc chưa phù hợp của con.",
-  "Tôi tát hoặc đánh con khi con không nghe lời.",
+  "Tôi đánh đòn khi con không vâng lời.",
   "Tôi khuyến khích con chia sẻ những vấn đề khiến con lo lắng hoặc khó khăn.",
   "Tôi cảm thấy khó khăn khi đặt ra kỷ luật hoặc giới hạn cho con.",
   "Tôi khuyến khích con bày tỏ suy nghĩ, kể cả khi con không đồng ý với tôi.",
@@ -220,9 +221,9 @@ const QUESTIONS = [
   "Tôi dành thời gian gần gũi, ấm áp và chia sẻ riêng với con.",
   "Tôi phạt con bằng cách bắt con ở riêng một chỗ mà ít hoặc không giải thích lý do.",
   "Tôi giúp con hiểu tác động của hành vi bằng cách cùng con trao đổi về hậu quả của hành động đó.",
-  "Tôi quát hoặc hét vào con khi con cư xử không đúng.",
+  "Tôi la rầy hoặc chỉ trích khi hành vi của con không đạt như tôi mong đợi.",
   "Tôi giải thích những hậu quả có thể xảy ra từ hành vi của con.",
-  "Tôi sử dụng hình phạt thể chất khi con không tuân theo yêu cầu."
+  "Tôi sử dụng hình phạt thân thể khi con không tuân theo yêu cầu."
 ];
 const SCALE = ["Không bao giờ", "Hiếm khi", "Thỉnh thoảng", "Thường xuyên", "Luôn luôn"];
 
@@ -285,10 +286,10 @@ function lowestPositive(d) {
 /* ---------- Nội dung diễn giải ---------- */
 const DIM_INFO = {
   warmth:    { name: "Kết nối, ấm áp và hỗ trợ", desc: "Quan tâm, an ủi, khen ngợi, dành thời gian riêng cho con." },
-  reasoning: { name: "Giải thích lý do", desc: "Nói rõ lý do của quy tắc, cảm xúc của bạn và hậu quả của hành vi." },
+  reasoning: { name: "Giải thích lý do", desc: "Nói rõ lý do của quy tắc, cảm xúc của ba mẹ và hậu quả của hành vi." },
   autonomy:  { name: "Khuyến khích tự chủ, tham gia", desc: "Lắng nghe ý con, cho con tham gia quyết định và đặt quy tắc." },
-  physical:  { name: "Cưỡng ép thể chất", desc: "Đánh, tát hoặc dùng sức mạnh cơ thể để con nghe lời." },
-  verbal:    { name: "Thù địch bằng lời nói", desc: "Quát, hét, tranh cãi giận dữ hoặc dùng lời gay gắt." },
+  physical:  { name: "Cưỡng ép thân thể", desc: "Đánh, tát hoặc dùng sức mạnh cơ thể để con nghe lời." },
+  verbal:    { name: "Thù địch bằng lời nói", desc: "Quát, la rầy, chỉ trích, tranh cãi giận dữ hoặc dùng lời gay gắt." },
   punitive:  { name: "Phạt mà thiếu giải thích", desc: "Phạt ít trao đổi, hoặc tách con ra một mình mà không nói lý do." },
   indulgent: { name: "Nuông chiều, thiếu nhất quán", desc: "Nhượng bộ khi con làm ầm, đe dọa rồi bỏ qua, khó giữ giới hạn." }
 };
@@ -298,23 +299,23 @@ const STYLE_INFO = {
   permissive:    { name: "Dễ dãi", en: "Permissive", desc: "Thương con, khó đặt hoặc giữ giới hạn nhất quán." }
 };
 const PROFILES = {
-  p1: ["Ấm áp, có lý lẽ và giữ được giới hạn", "Trong 3 tháng gần đây, bạn thường lắng nghe con, giải thích lý do và cho con tiếng nói, đồng thời ít dùng áp lực hay trừng phạt. Các nghiên cứu về nuôi dạy con thường gắn sự kết hợp này với trẻ tự tin và biết tự điều chỉnh."],
-  p2: ["Nền tảng gần gũi, còn vài phản xạ cần điều chỉnh", "Bạn có nhiều hành vi nuôi dưỡng như lắng nghe, giải thích, khen ngợi. Bên cạnh đó vẫn còn một số phản ứng mạnh hoặc chưa đều tay, thường xuất hiện khi bạn mệt hoặc khi con thử giới hạn. Chỉnh đúng một điểm là đủ để thấy khác biệt."],
-  p3: ["Nhiều kiểm soát, ít chỗ cho giải thích", "Bạn đặt kỷ luật khá rõ, nhưng phần giải thích và lắng nghe đang ít hơn phần yêu cầu. Thêm một câu lý do và một câu hỏi ý kiến con thường làm quy tắc dễ được con chấp nhận hơn."],
-  p4: ["Thương con nhiều, giới hạn còn lỏng", "Bạn có xu hướng nhượng bộ khi con phản ứng mạnh. Giữ vài quy tắc cốt lõi thật nhất quán sẽ giúp con thấy yên tâm và biết điều gì là chắc chắn."],
-  p5: ["Có nền tảng, chưa đều tay", "Bạn dùng cả những cách nuôi dưỡng lẫn những cách phản ứng nhanh, tùy lúc. Điều này rất phổ biến ở phụ huynh. Chọn một thói quen nhỏ và làm đều mỗi ngày sẽ tạo thay đổi rõ nhất."],
+  p1: ["Ấm áp, có lý lẽ và giữ được giới hạn", "Trong 3 tháng gần đây, ba mẹ thường lắng nghe con, giải thích lý do và cho con tiếng nói, đồng thời ít dùng áp lực hay trừng phạt. Các nghiên cứu về nuôi dạy con thường gắn sự kết hợp này với trẻ tự tin và biết tự điều chỉnh."],
+  p2: ["Nền tảng gần gũi, còn vài phản xạ cần điều chỉnh", "Ba mẹ có nhiều hành vi nuôi dưỡng như lắng nghe, giải thích, khen ngợi. Bên cạnh đó vẫn còn một số phản ứng mạnh hoặc chưa đều tay, thường xuất hiện khi ba mẹ mệt hoặc khi con thử giới hạn. Chỉnh đúng một điểm là đủ để thấy khác biệt."],
+  p3: ["Nhiều kiểm soát, ít chỗ cho giải thích", "Ba mẹ đặt kỷ luật khá rõ, nhưng phần giải thích và lắng nghe đang ít hơn phần yêu cầu. Thêm một câu lý do và một câu hỏi ý kiến con thường làm quy tắc dễ được con chấp nhận hơn."],
+  p4: ["Thương con nhiều, giới hạn còn lỏng", "Ba mẹ có xu hướng nhượng bộ khi con phản ứng mạnh. Giữ vài quy tắc cốt lõi thật nhất quán sẽ giúp con thấy yên tâm và biết điều gì là chắc chắn."],
+  p5: ["Có nền tảng, chưa đều tay", "Ba mẹ dùng cả những cách nuôi dưỡng lẫn những cách phản ứng nhanh, tùy lúc. Điều này rất phổ biến ở phụ huynh. Chọn một thói quen nhỏ và làm đều mỗi ngày sẽ tạo thay đổi rõ nhất."],
   p6: ["Đang tìm cách cân bằng", "Các hành vi gần gũi và giải thích chưa xuất hiện thường xuyên trong 3 tháng qua. Có thể đây là giai đoạn nhiều áp lực. Hãy bắt đầu từ một việc rất nhỏ ở phần gợi ý bên dưới."]
 };
 const STRENGTH = {
   warmth: "Con biết có người lắng nghe mình. Đây là nền để con dám kể khi gặp chuyện khó.",
-  reasoning: "Bạn giúp con hiểu lý do sau mỗi quy tắc, nên con dễ tự điều chỉnh khi bạn không ở bên.",
-  autonomy: "Bạn cho con tiếng nói trong các quyết định, giúp con tự tin và có trách nhiệm hơn."
+  reasoning: "Ba mẹ giúp con hiểu lý do sau mỗi quy tắc, nên con dễ tự điều chỉnh khi ba mẹ không ở bên.",
+  autonomy: "Ba mẹ cho con tiếng nói trong các quyết định, giúp con tự tin và có trách nhiệm hơn."
 };
 /* tips: ba gợi ý chung; stage: một gợi ý theo bậc học; micro: câu cam kết ngắn */
 const FOCUS = {
   physical: {
     title: "Giảm dùng đòn roi, tát đánh",
-    why: "Đòn roi có thể khiến con dừng ngay, nhưng không giúp con biết cần làm gì khác, và có thể làm con sợ bạn thay vì tin bạn.",
+    why: "Đòn roi có thể khiến con dừng ngay, nhưng không giúp con biết cần làm gì khác, và có thể làm con sợ ba mẹ thay vì tin ba mẹ.",
     tips: [
       "Nhận ra dấu hiệu sớm của cơn giận (nóng mặt, giọng cao lên) và rời phòng 2 đến 3 phút trước khi phản ứng.",
       "Chọn trước một hệ quả rõ ràng, tương xứng và làm được (tạm dừng thiết bị một buổi, bù lại việc chưa làm) thay vì phản ứng lúc đang nóng.",
@@ -329,10 +330,10 @@ const FOCUS = {
   },
   verbal: {
     title: "Bớt quát mắng, lời lẽ gay gắt",
-    why: "Tiếng quát làm con tập trung vào cảm giác sợ hoặc tủi thân, nên điều bạn muốn nói lại khó vào đầu con hơn.",
+    why: "Tiếng quát làm con tập trung vào cảm giác sợ hoặc tủi thân, nên điều ba mẹ muốn nói lại khó vào đầu con hơn.",
     tips: [
-      "Nói điều bạn thấy và điều bạn cần, thay vì chê con: “Phòng chưa dọn, mẹ cần con dọn trước 8 giờ” thay cho “Sao lười thế”.",
-      "Hạ giọng thay vì tăng giọng. Con thường nghe rõ hơn khi bạn nói nhỏ và chậm lại.",
+      "Nói điều ba mẹ thấy và điều ba mẹ cần, thay vì chê con: “Phòng chưa dọn, mẹ cần con dọn trước 8 giờ” thay cho “Sao lười thế”.",
+      "Hạ giọng thay vì tăng giọng. Con thường nghe rõ hơn khi ba mẹ nói nhỏ và chậm lại.",
       "Nếu lỡ quát, quay lại nói: “Lúc nãy mẹ nói to quá. Mẹ muốn nói lại cho đúng.”"
     ],
     stage: {
@@ -362,7 +363,7 @@ const FOCUS = {
     why: "Con cần biết điều gì là chắc chắn. Khi quy tắc đổi theo mức độ làm ầm, con học rằng làm ầm là cách hiệu quả.",
     tips: [
       "Chọn 2 đến 3 quy tắc cốt lõi (giờ ngủ, thiết bị, an toàn) và giữ nhất quán dù con phản ứng mạnh.",
-      "Chỉ nói trước hệ quả khi bạn chắc chắn thực hiện được. Tránh dọa rồi bỏ qua.",
+      "Chỉ nói trước hệ quả khi ba mẹ chắc chắn thực hiện được. Tránh dọa rồi bỏ qua.",
       "Thống nhất với những người lớn trong nhà để con không nhận về tín hiệu khác nhau."
     ],
     stage: {
@@ -374,7 +375,7 @@ const FOCUS = {
   },
   warmth: {
     title: "Tăng thời gian gần gũi và lắng nghe",
-    why: "Sự gần gũi là nền để con chịu lắng nghe bạn khi bạn đặt giới hạn.",
+    why: "Sự gần gũi là nền để con chịu lắng nghe ba mẹ khi ba mẹ đặt giới hạn.",
     tips: [
       "Dành 10 phút mỗi ngày chỉ để nghe con, không dạy, không sửa, không nhìn điện thoại.",
       "Gọi tên cảm xúc của con trước khi bàn chuyện đúng sai: “Con có vẻ đang rất bực.”",
@@ -392,13 +393,13 @@ const FOCUS = {
     why: "Khi hiểu lý do, con làm theo vì tin quy tắc hợp lý, không chỉ vì sợ bị phạt.",
     tips: [
       "Khi đặt quy tắc, nói kèm lý do bằng một câu ngắn bắt đầu bằng “vì…”.",
-      "Thay “vì mẹ đã nói vậy” bằng điều bạn lo hoặc hậu quả thực tế.",
+      "Thay “vì mẹ đã nói vậy” bằng điều ba mẹ lo hoặc hậu quả thực tế.",
       "Sau sự việc, hỏi con: “Con nghĩ điều gì đã xảy ra? Lần sau con sẽ làm gì khác?”"
     ],
     stage: {
       nho: "Dùng câu ngắn, cụ thể: “Ra đường xe chạy nhanh, nên mình nắm tay khi qua đường.”",
       thcs: "Cho con thấy hậu quả thật của lựa chọn (điểm số, giờ ngủ, bạn bè) và để con tự nói ra phương án.",
-      thpt: "Trình bày quy tắc như một thỏa thuận: nêu mối lo của bạn, nghe quan điểm của con rồi cùng chốt."
+      thpt: "Trình bày quy tắc như một thỏa thuận: nêu mối lo của ba mẹ, nghe quan điểm của con rồi cùng chốt."
     },
     micro: "Mỗi khi đặt quy tắc, tôi sẽ nói kèm một lý do ngắn."
   },
@@ -406,14 +407,14 @@ const FOCUS = {
     title: "Cho con nhiều tiếng nói hơn",
     why: "Con được tham gia quyết định sẽ có trách nhiệm hơn với quy tắc đó.",
     tips: [
-      "Cho con chọn trong khuôn khổ: hai hoặc ba phương án đều là phương án bạn chấp nhận.",
+      "Cho con chọn trong khuôn khổ: hai hoặc ba phương án đều là phương án ba mẹ chấp nhận.",
       "Họp gia đình ngắn để cùng đặt hoặc chỉnh quy tắc như giờ dùng điện thoại, việc nhà.",
       "Khi con không đồng ý, nghe hết rồi mới trả lời, và ghi nhận phần hợp lý trong ý con."
     ],
     stage: {
       nho: "Cho con tự chọn quần áo hoặc thứ tự làm việc trong buổi tối.",
       thcs: "Cùng con lập quy tắc dùng điện thoại, chạy thử 2 tuần rồi xem lại cùng nhau.",
-      thpt: "Giao cho con những quyết định thật (lịch học thêm, cách chi tiêu), bạn đóng vai người tư vấn."
+      thpt: "Giao cho con những quyết định thật (lịch học thêm, cách chi tiêu), ba mẹ đóng vai người tư vấn."
     },
     micro: "Mỗi ngày tôi cho con tự chọn một việc trong khuôn khổ tôi chấp nhận."
   }
@@ -450,6 +451,7 @@ chipGroup("g-stage", STAGES, "stage", refreshStart);
 $("f-name").addEventListener("input", e => { state.name = e.target.value.trim(); });
 
 function show(which) {
+  document.body.classList.toggle("in-quiz", which === "s-quiz");
   ["s-intro", "s-quiz", "s-result"].forEach(id => { $(id).hidden = id !== which; });
   window.scrollTo(0, 0);
 }
@@ -465,6 +467,7 @@ function renderQ() {
   $("q-answers").innerHTML = SCALE.map((l, k) =>
     `<button type="button" class="ans" role="radio" aria-checked="${cur === k + 1}" data-v="${k + 1}"><span class="n">${k + 1}</span><span>${l}</span></button>`).join("");
   state.lock = false;
+  window.scrollTo(0, 0);
 }
 function choose(v) {
   if (state.lock) return;
@@ -524,19 +527,19 @@ function renderResult() {
 
   const li = n => `<li>${esc(QUESTIONS[n - 1])} <span class="hint">(${SCALE[ans[n - 1] - 1]})</span></li>`;
   const who = [state.role ? ROLES[state.role] : "", "con học " + STAGES[stage]].filter(Boolean).join(" · ");
-  const greet = state.name ? `Chào ${esc(state.name)}` : "Chào bạn";
+  const greet = state.name ? `Kính chào ${esc(state.name)}` : "Kính chào Quý phụ huynh";
 
   let h = "";
   h += `<div class="card res-head">
     <p class="who">${esc(who)}</p>
-    <h1>${greet}, đây là kết quả của bạn</h1>
+    <h1>${greet}, đây là kết quả của ba mẹ</h1>
     <p class="headline">${esc(profile[0])}</p>
     <p class="body">${esc(profile[1])}</p>
   </div>`;
 
   h += `<div class="card">
     <h2 class="sec-title">Ba phong cách trong cách đồng hành</h2>
-    <p class="sec-sub">Điểm trung bình từ 1 (không bao giờ) đến 5 (luôn luôn). Đây là các thang liên tục để bạn nhìn lại mình, không phải nhãn gán cho bạn.</p>
+    <p class="sec-sub">Điểm trung bình từ 1 (không bao giờ) đến 5 (luôn luôn). Đây là các thang liên tục để ba mẹ nhìn lại mình, không phải nhãn gán cho ba mẹ.</p>
     <div class="rows">${Object.keys(STYLES).map(k =>
       rowHtml(`${STYLE_INFO[k].name} (${STYLE_INFO[k].en})`, STYLE_INFO[k].desc, styles[k], "var(--forest)", true)).join("")}</div>
     ${ticks()}
@@ -556,19 +559,19 @@ function renderResult() {
   </div>`;
 
   h += `<div class="card">
-    <h2 class="sec-title">Điểm mạnh của bạn</h2>`;
+    <h2 class="sec-title">Điểm mạnh của ba mẹ</h2>`;
   if (strengths.length) {
     h += `<div class="str">${strengths.map(k => `<div><b>${esc(DIM_INFO[k].name)} (${fmt(dims[k])})</b>${esc(STRENGTH[k])}</div>`).join("")}</div>`;
   } else {
-    h += `<p class="sec-sub" style="margin-top:8px">Chưa có khía cạnh nuôi dưỡng nào đạt mức thường xuyên. Việc bạn dành thời gian làm phiếu này đã là một bước đồng hành. Bắt đầu từ gợi ý nhỏ ở phần dưới là đủ.</p>`;
+    h += `<p class="sec-sub" style="margin-top:8px">Chưa có khía cạnh nuôi dưỡng nào đạt mức thường xuyên. Việc ba mẹ dành thời gian làm phiếu này đã là một bước đồng hành. Bắt đầu từ gợi ý nhỏ ở phần dưới là đủ.</p>`;
   }
   h += `</div>`;
 
   if (hi.length || watch.length || lowPos.length) {
-    h += `<div class="card"><h2 class="sec-title">Điều nổi lên từ câu trả lời của bạn</h2>`;
-    if (hi.length) h += `<p class="sub">Bạn làm thường xuyên và đáng ghi nhận</p><ul class="list">${hi.map(li).join("")}</ul>`;
-    if (watch.length) h += `<p class="sub">Bạn cho biết hay xảy ra và có thể muốn giảm</p><ul class="list">${watch.map(li).join("")}</ul>`;
-    if (lowPos.length) h += `<p class="sub">Việc nuôi dưỡng bạn chưa làm nhiều, có thể thử</p><ul class="list">${lowPos.map(li).join("")}</ul>`;
+    h += `<div class="card"><h2 class="sec-title">Điều nổi lên từ câu trả lời của ba mẹ</h2>`;
+    if (hi.length) h += `<p class="sub">Ba mẹ làm thường xuyên và đáng ghi nhận</p><ul class="list">${hi.map(li).join("")}</ul>`;
+    if (watch.length) h += `<p class="sub">Ba mẹ cho biết hay xảy ra và có thể muốn giảm</p><ul class="list">${watch.map(li).join("")}</ul>`;
+    if (lowPos.length) h += `<p class="sub">Việc nuôi dưỡng ba mẹ chưa làm nhiều, có thể thử</p><ul class="list">${lowPos.map(li).join("")}</ul>`;
     h += `</div>`;
   }
 
@@ -584,12 +587,12 @@ function renderResult() {
   if (physHigh) {
     h += `<div class="card care">
       <h2 class="sec-title">Một lời nhắn riêng</h2>
-      <p style="margin-top:8px">Câu trả lời cho thấy có lúc bạn dùng đòn roi hoặc tát đánh. Nhiều phụ huynh phản ứng như vậy khi quá mệt hoặc quá lo cho con, và không ai phải tự xoay xở một mình. Bạn có thể trao đổi riêng, kín đáo với giáo viên chủ nhiệm hoặc bộ phận tư vấn của nhà trường để cùng tìm cách khác.</p>
+      <p style="margin-top:8px">Câu trả lời cho thấy có lúc ba mẹ dùng đòn roi hoặc tát đánh. Nhiều phụ huynh phản ứng như vậy khi quá mệt hoặc quá lo cho con, và không ai phải tự xoay xở một mình. Ba mẹ có thể trao đổi riêng, kín đáo với giáo viên chủ nhiệm hoặc bộ phận tư vấn của nhà trường để cùng tìm cách khác.</p>
     </div>`;
   }
 
   h += `<div class="card">
-    <h2 class="sec-title">Ghi chú cho riêng bạn</h2>
+    <h2 class="sec-title">Ghi chú cho riêng ba mẹ</h2>
     <div class="field">
       <label for="n1">Điều tôi nhận thấy về cách mình đồng hành cùng con</label>
       <textarea id="n1" class="input" maxlength="500" placeholder="Viết vài dòng ngắn"></textarea>
@@ -610,7 +613,7 @@ function renderResult() {
 
   h += `<div class="note">
     <p>Phiếu tham khảo cấu trúc PSDQ-SF (Parenting Styles and Dimensions Questionnaire, Short Form; Robinson và cộng sự, 2001). Đây là bản diễn đạt lại bằng tiếng Việt, chưa phải bản dịch chuẩn hóa chính thức.</p>
-    <p>Kết quả phản ánh điều bạn tự báo cáo trong 3 tháng gần đây. Đây không phải chẩn đoán, không có ngưỡng điểm chung để kết luận một người thuộc một phong cách duy nhất, và không dùng để phán xét phụ huynh.</p>
+    <p>Kết quả phản ánh điều ba mẹ tự báo cáo trong 3 tháng gần đây. Đây không phải chẩn đoán, không có ngưỡng điểm chung để kết luận một người thuộc một phong cách duy nhất, và không dùng để phán xét phụ huynh.</p>
   </div>`;
 
   const el = $("s-result");
@@ -645,9 +648,9 @@ function copyResult(focusKey, strengths) {
   if (n2) { L.push(""); L.push("Hành vi tôi muốn điều chỉnh: " + n2); }
   const text = L.join("\n");
   const t = $("toast");
-  const fail = () => { t.style.color = "var(--ink)"; t.textContent = "Chưa sao chép được. Bạn hãy chụp màn hình để lưu lại."; };
+  const fail = () => { t.style.color = "var(--ink)"; t.textContent = "Chưa sao chép được. Ba mẹ hãy chụp màn hình để lưu lại."; };
   try {
-    navigator.clipboard.writeText(text).then(() => { t.style.color = "var(--good)"; t.textContent = "Đã sao chép. Bạn có thể dán vào Zalo hoặc ghi chú."; }, fail);
+    navigator.clipboard.writeText(text).then(() => { t.style.color = "var(--good)"; t.textContent = "Đã sao chép. Ba mẹ có thể dán vào Zalo hoặc ghi chú."; }, fail);
   } catch (e) { fail(); }
 }
 
