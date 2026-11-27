@@ -123,6 +123,11 @@ textarea.input { min-height: 120px; resize: vertical; }
 .actions { display: flex; flex-direction: column; gap: 10px; }
 .note { font-size: 15px; color: var(--muted); }
 .note p + p { margin-top: 6px; }
+.evid { margin-top: 14px; font-size: 15px; color: var(--muted); }
+.evid b { color: var(--ink); }
+.refs summary { cursor: pointer; font-weight: 600; color: var(--ink); font-size: 16px; padding: 6px 0; }
+.refs ol { margin: 8px 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); }
+.refs a { color: var(--forest); word-break: break-all; }
 .toast { font-size: 16px; font-weight: 600; color: var(--good); min-height: 20px; }
 
 @media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
@@ -299,7 +304,7 @@ const STYLE_INFO = {
   permissive:    { name: "Dễ dãi", en: "Permissive", desc: "Thương con, khó đặt hoặc giữ giới hạn nhất quán." }
 };
 const PROFILES = {
-  p1: ["Ấm áp, có lý lẽ và giữ được giới hạn", "Trong 3 tháng gần đây, ba mẹ thường lắng nghe con, giải thích lý do và cho con tiếng nói, đồng thời ít dùng áp lực hay trừng phạt. Các nghiên cứu về nuôi dạy con thường gắn sự kết hợp này với trẻ tự tin và biết tự điều chỉnh."],
+  p1: ["Ấm áp, có lý lẽ và giữ được giới hạn", "Trong 3 tháng gần đây, ba mẹ thường lắng nghe con, giải thích lý do và cho con tiếng nói, đồng thời ít dùng áp lực hay trừng phạt. Các nghiên cứu về nuôi dạy con (Baumrind, 1991; Steinberg và cộng sự, 1994) thường gắn sự kết hợp này với trẻ tự tin, học tốt và biết tự điều chỉnh."],
   p2: ["Nền tảng gần gũi, còn vài phản xạ cần điều chỉnh", "Ba mẹ có nhiều hành vi nuôi dưỡng như lắng nghe, giải thích, khen ngợi. Bên cạnh đó vẫn còn một số phản ứng mạnh hoặc chưa đều tay, thường xuất hiện khi ba mẹ mệt hoặc khi con thử giới hạn. Chỉnh đúng một điểm là đủ để thấy khác biệt."],
   p3: ["Nhiều kiểm soát, ít chỗ cho giải thích", "Ba mẹ đặt kỷ luật khá rõ, nhưng phần giải thích và lắng nghe đang ít hơn phần yêu cầu. Thêm một câu lý do và một câu hỏi ý kiến con thường làm quy tắc dễ được con chấp nhận hơn."],
   p4: ["Thương con nhiều, giới hạn còn lỏng", "Ba mẹ có xu hướng nhượng bộ khi con phản ứng mạnh. Giữ vài quy tắc cốt lõi thật nhất quán sẽ giúp con thấy yên tâm và biết điều gì là chắc chắn."],
@@ -419,6 +424,37 @@ const FOCUS = {
     micro: "Mỗi ngày tôi cho con tự chọn một việc trong khuôn khổ tôi chấp nhận."
   }
 };
+/* ---------- Tài liệu tham khảo (chỉ dùng nguồn đã kiểm chứng) ---------- */
+const REFS = {
+  robinson2001: { c: "Robinson và cộng sự, 2001", f: "Robinson, C. C., Mandleco, B., Olsen, S. F., & Hart, C. H. (2001). The Parenting Styles and Dimensions Questionnaire (PSDQ). Trong B. F. Perlmutter, J. Touliatos & G. W. Holden (Eds.), Handbook of family measurement techniques: Vol. 3 (tr. 319–321). Sage." },
+  baumrind1966: { c: "Baumrind, 1966", f: "Baumrind, D. (1966). Effects of authoritative parental control on child behavior. Child Development, 37(4), 887–907.", u: "https://doi.org/10.2307/1126611" },
+  baumrind1991: { c: "Baumrind, 1991", f: "Baumrind, D. (1991). The influence of parenting style on adolescent competence and substance use. Journal of Early Adolescence, 11(1), 56–95.", u: "https://doi.org/10.1177/0272431691111004" },
+  steinberg1994: { c: "Steinberg và cộng sự, 1994", f: "Steinberg, L., Lamborn, S. D., Darling, N., Mounts, N. S., & Dornbusch, S. M. (1994). Over-time changes in adjustment and competence among adolescents from authoritative, authoritarian, indulgent, and neglectful families. Child Development, 65(3), 754–770.", u: "https://doi.org/10.2307/1131416" },
+  gershoff2016: { c: "Gershoff & Grogan-Kaylor, 2016", f: "Gershoff, E. T., & Grogan-Kaylor, A. (2016). Spanking and child outcomes: Old controversies and new meta-analyses. Journal of Family Psychology, 30(4), 453–469. (Phân tích gộp 75 nghiên cứu, khoảng 160.000 trẻ.)", u: "https://doi.org/10.1037/fam0000191" },
+  who2021: { c: "WHO, 2021", f: "World Health Organization (2021). Corporal punishment of children and health (Fact sheet). Geneva: WHO.", u: "https://www.who.int/news-room/fact-sheets/detail/corporal-punishment-and-health" },
+  wang2014: { c: "Wang & Kenny, 2014", f: "Wang, M.-T., & Kenny, S. (2014). Longitudinal links between fathers’ and mothers’ harsh verbal discipline and adolescents’ conduct problems and depressive symptoms. Child Development, 85(3), 908–923.", u: "https://doi.org/10.1111/cdev.12143" },
+  faber1980: { c: "Faber & Mazlish, 1980", f: "Faber, A., & Mazlish, E. (1980). How to talk so kids will listen & listen so kids will talk. New York: Rawson, Wade. (Bản tiếng Việt: “Nói sao cho trẻ chịu nghe & Nghe sao cho trẻ chịu nói”.)" },
+  grusec1994: { c: "Grusec & Goodnow, 1994", f: "Grusec, J. E., & Goodnow, J. J. (1994). Impact of parental discipline methods on the child’s internalization of values: A reconceptualization of current points of view. Developmental Psychology, 30(1), 4–19.", u: "https://doi.org/10.1037/0012-1649.30.1.4" },
+  hoffman2000: { c: "Hoffman, 2000", f: "Hoffman, M. L. (2000). Empathy and moral development: Implications for caring and justice. Cambridge University Press." },
+  patterson1982: { c: "Patterson, 1982", f: "Patterson, G. R. (1982). Coercive family process. Eugene, OR: Castalia." },
+  kazdin2008: { c: "Kazdin, 2008", f: "Kazdin, A. E. (2008). The Kazdin method for parenting the defiant child. Boston: Houghton Mifflin." },
+  gottman1996: { c: "Gottman và cộng sự, 1996", f: "Gottman, J. M., Katz, L. F., & Hooven, C. (1996). Parental meta-emotion philosophy and the emotional life of families. Journal of Family Psychology, 10(3), 243–268.", u: "https://doi.org/10.1037/0893-3200.10.3.243" },
+  siegel2011: { c: "Siegel & Bryson, 2011", f: "Siegel, D. J., & Bryson, T. P. (2011). The whole-brain child. New York: Delacorte Press." },
+  mueller1998: { c: "Mueller & Dweck, 1998", f: "Mueller, C. M., & Dweck, C. S. (1998). Praise for intelligence can undermine children’s motivation and performance. Journal of Personality and Social Psychology, 75(1), 33–52.", u: "https://doi.org/10.1037/0022-3514.75.1.33" },
+  grolnick1989: { c: "Grolnick & Ryan, 1989", f: "Grolnick, W. S., & Ryan, R. M. (1989). Parent styles associated with children’s self-regulation and competence in school. Journal of Educational Psychology, 81(2), 143–154.", u: "https://doi.org/10.1037/0022-0663.81.2.143" },
+  joussemet2008: { c: "Joussemet và cộng sự, 2008", f: "Joussemet, M., Landry, R., & Koestner, R. (2008). A self-determination theory perspective on parenting. Canadian Psychology, 49(3), 194–200.", u: "https://doi.org/10.1037/a0012754" }
+};
+/* ev: tóm tắt bằng chứng; src: khóa trong REFS */
+const EVID = {
+  physical:  { ev: "Phân tích gộp 75 nghiên cứu cho thấy đòn roi không làm trẻ ngoan hơn về lâu dài, mà gắn với nhiều hành vi chống đối, hung hăng và vấn đề sức khỏe tinh thần hơn. WHO khuyến nghị chấm dứt mọi hình thức trừng phạt thân thể với trẻ.", src: ["gershoff2016", "who2021"] },
+  verbal:    { ev: "Nghiên cứu theo dõi gần 1.000 gia đình trong 2 năm: quát mắng, lăng mạ ở tuổi 13 dự báo nhiều vấn đề hành vi và triệu chứng trầm cảm hơn ở tuổi 14, kể cả khi ba mẹ vẫn ấm áp. Các kỹ thuật “mô tả điều thấy, nói điều cần” lấy từ sách của Faber & Mazlish.", src: ["wang2014", "faber1980"] },
+  punitive:  { ev: "Kỷ luật kèm giải thích (induction) giúp trẻ hiểu và tự chấp nhận giá trị, thay vì chỉ tuân theo khi có người lớn. Hình phạt không lời giải thích ít tạo ra sự nội hóa này.", src: ["hoffman2000", "grusec1994"] },
+  indulgent: { ev: "Mô hình “vòng lặp cưỡng ép” của Patterson: khi ba mẹ nhượng bộ trước cơn làm ầm, hành vi làm ầm được củng cố và lặp lại nhiều hơn. Giới hạn rõ, nhất quán, hệ quả nói được làm được là nền của các chương trình huấn luyện cha mẹ có kiểm chứng.", src: ["patterson1982", "kazdin2008"] },
+  warmth:    { ev: "Ba mẹ biết gọi tên và đón nhận cảm xúc của con (“huấn luyện cảm xúc”) gắn với trẻ tự điều chỉnh tốt hơn. Khen nỗ lực thay vì khen trí thông minh giúp trẻ bền bỉ hơn khi gặp việc khó.", src: ["gottman1996", "siegel2011", "mueller1998"] },
+  reasoning: { ev: "Giải thích lý do khi đặt quy tắc là đặc điểm cốt lõi của phong cách dân chủ, và giúp trẻ nội hóa giá trị thay vì chỉ làm theo vì sợ.", src: ["baumrind1966", "grusec1994"] },
+  autonomy:  { ev: "Theo thuyết Tự quyết (Self-Determination Theory), ba mẹ hỗ trợ tự chủ (cho lựa chọn, ghi nhận quan điểm của con, giải thích lý do) gắn với trẻ tự điều chỉnh và học tập tốt hơn.", src: ["grolnick1989", "joussemet2008"] }
+};
+const cite = keys => keys.map(k => REFS[k].c).join("; ");
 const STAGES = { nho: "Mầm non / Tiểu học", thcs: "THCS", thpt: "THPT" };
 const ROLES = { ba: "Ba", me: "Mẹ", khac: "Người nuôi dưỡng khác" };
 
@@ -581,6 +617,7 @@ function renderResult() {
     <p style="margin-top:8px">${esc(F.why)}</p>
     <ul class="list">${F.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
     <p class="stage-tip"><b>Với con ${esc(STAGES[stage])}:</b> ${esc(F.stage[stage])}</p>
+    <p class="evid"><b>Cơ sở khoa học:</b> ${esc(EVID[focusKey].ev)} (${esc(cite(EVID[focusKey].src))})</p>
     ${showSecond ? `<p class="sub" style="margin-top:18px">Khi đã quen, thêm một việc nữa: ${esc(S.title.toLowerCase())}</p><p class="hint" style="margin-top:4px">${esc(S.stage[stage])}</p>` : ""}
   </div>`;
 
@@ -614,6 +651,10 @@ function renderResult() {
   h += `<div class="note">
     <p>Phiếu tham khảo cấu trúc PSDQ-SF (Parenting Styles and Dimensions Questionnaire, Short Form; Robinson và cộng sự, 2001). Đây là bản diễn đạt lại bằng tiếng Việt, chưa phải bản dịch chuẩn hóa chính thức.</p>
     <p>Kết quả phản ánh điều ba mẹ tự báo cáo trong 3 tháng gần đây. Đây không phải chẩn đoán, không có ngưỡng điểm chung để kết luận một người thuộc một phong cách duy nhất, và không dùng để phán xét phụ huynh.</p>
+    <p>Các gợi ý được nhà trường biên soạn dựa trên những nghiên cứu và sách dưới đây; cách diễn đạt và ví dụ theo bậc học là phần điều chỉnh cho phù hợp với gia đình Việt Nam.</p>
+    <details class="refs"><summary>Tài liệu tham khảo (${Object.keys(REFS).length})</summary>
+      <ol>${Object.values(REFS).map(r => `<li>${esc(r.f)}${r.u ? ` <a href="${r.u}" target="_blank" rel="noopener">${esc(r.u)}</a>` : ""}</li>`).join("")}</ol>
+    </details>
   </div>`;
 
   const el = $("s-result");
@@ -643,6 +684,7 @@ function copyResult(focusKey, strengths) {
   L.push("");
   if (strengths.length) L.push("Điểm mạnh: " + strengths.map(k => DIM_INFO[k].name).join("; "));
   L.push("Gợi ý thử trong 7 ngày: " + FOCUS[focusKey].title);
+  L.push("Cơ sở khoa học: " + cite(EVID[focusKey].src));
   const n1 = ($("n1") || {}).value, n2 = ($("n2") || {}).value;
   if (n1) { L.push(""); L.push("Điều tôi nhận thấy: " + n1); }
   if (n2) { L.push(""); L.push("Hành vi tôi muốn điều chỉnh: " + n2); }
