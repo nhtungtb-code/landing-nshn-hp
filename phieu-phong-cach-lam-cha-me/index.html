@@ -53,10 +53,24 @@ body.in-quiz .top { display: none; }
 
 /* Intro */
 .hero h1 { font-size: 32px; }
-.hero .lead { color: var(--muted); margin-top: 8px; }
-.facts { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 10px; }
-.facts li { display: flex; gap: 12px; align-items: flex-start; font-size: 18px; }
-.facts li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 50%; background: var(--gold); }
+.hero .lead { color: var(--muted); margin-top: 8px; font-size: 14.5px; line-height: 1.5; }
+.map { margin-top: 14px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #F7FAF8; }
+.map-title { font-size: 14.5px; font-weight: 700; color: var(--forest); }
+.seg { display: flex; gap: 3px; margin-top: 10px; height: 34px; }
+.seg i { display: grid; place-items: center; font-style: normal; font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; border-radius: 8px; min-width: 0; }
+.seg i:nth-child(1) { background: var(--forest); color: #fff; }
+.seg i:nth-child(2) { background: #2E7D5B; color: #fff; }
+.seg i:nth-child(3) { background: var(--gold); color: var(--forest); }
+.seg-cap { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.sty { margin-top: 12px; }
+.sty-h { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; color: var(--forest); }
+.sty-h b { flex: none; width: 12px; height: 12px; border-radius: 4px; }
+.sty-h small { font-weight: 600; color: var(--muted); font-size: 13.5px; }
+.dims { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0 20px; }
+.dims span { font-size: 13.5px; line-height: 1.3; padding: 5px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--ink); }
+.facts { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.facts li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.45; }
+.facts li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 7px; border-radius: 50%; background: var(--gold); }
 .field { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
 .field > label, .field > .lab { font-weight: 700; font-size: 18px; }
 .field .opt { font-weight: 400; color: var(--muted); }
@@ -149,6 +163,23 @@ textarea.input { min-height: 120px; resize: vertical; }
   <section id="s-intro" class="card hero">
     <h1>PHONG CÁCH LÀM CHA MẸ</h1>
     <p class="lead">Kính gửi Quý Phụ huynh, đây là bộ câu hỏi được xây dựng dựa trên bài test PSDQ-SF. PSDQ-SF là bảng hỏi tự báo cáo gồm 32 câu do Robinson, Mandleco, Olsen và Hart (2001) phát triển dựa trên mô hình phong cách làm cha mẹ của Diana Baumrind. Công cụ đánh giá mức độ cha/mẹ sử dụng ba phong cách nuôi dạy: Dân chủ (Authoritative), Độc đoán (Authoritarian) và Dễ dãi (Permissive), cùng 7 chiều cạnh cụ thể bên trong các phong cách đó.</p>
+    <div class="map" role="group" aria-label="Cấu trúc bài test: 3 phong cách, 7 chiều cạnh, 32 câu">
+      <p class="map-title">Bài test gồm 32 câu, chia thành 3 phong cách và 7 chiều cạnh</p>
+      <div class="seg" aria-hidden="true"><i style="flex:15">15</i><i style="flex:12">12</i><i style="flex:5">5</i></div>
+      <p class="seg-cap">Số câu hỏi của mỗi phong cách</p>
+      <div class="sty">
+        <p class="sty-h"><b style="background:var(--forest)"></b>Dân chủ <small>Authoritative · 15 câu</small></p>
+        <div class="dims"><span>Kết nối, ấm áp và hỗ trợ</span><span>Giải thích lý do</span><span>Khuyến khích tự chủ, tham gia</span></div>
+      </div>
+      <div class="sty">
+        <p class="sty-h"><b style="background:#2E7D5B"></b>Độc đoán <small>Authoritarian · 12 câu</small></p>
+        <div class="dims"><span>Cưỡng ép thân thể</span><span>Thù địch bằng lời nói</span><span>Phạt mà thiếu giải thích</span></div>
+      </div>
+      <div class="sty">
+        <p class="sty-h"><b style="background:var(--gold)"></b>Dễ dãi <small>Permissive · 5 câu</small></p>
+        <div class="dims"><span>Nuông chiều, thiếu nhất quán</span></div>
+      </div>
+    </div>
     <ul class="facts">
       <li>Phiếu gồm 32 câu, làm trong khoảng 6 phút.</li>
       <li>Trả lời theo điều ba mẹ thực sự làm trong 3 tháng gần đây, không theo điều ba mẹ nghĩ một phụ huynh lý tưởng nên làm.</li>
