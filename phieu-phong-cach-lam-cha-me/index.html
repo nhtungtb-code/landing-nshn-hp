@@ -188,10 +188,6 @@ textarea.input { min-height: 120px; resize: vertical; }
       <li>Câu trả lời được xử lý ngay trên điện thoại của ba mẹ. Nhà trường không nhận được dữ liệu nào.</li>
     </ul>
 
-    <div class="field">
-      <label for="f-name">Ba mẹ muốn được gọi là gì? <span class="opt">(không bắt buộc)</span></label>
-      <input id="f-name" class="input" type="text" maxlength="30" autocomplete="off" placeholder="Ví dụ: chị Lan">
-    </div>
     <div class="field" role="radiogroup" aria-labelledby="l-role">
       <span class="lab" id="l-role">Người điền phiếu là <span class="opt">(không bắt buộc)</span></span>
       <div class="chips" id="g-role"></div>
@@ -517,7 +513,6 @@ function refreshStart() {
 }
 chipGroup("g-role", ROLES, "role", refreshStart);
 chipGroup("g-stage", STAGES, "stage", refreshStart);
-$("f-name").addEventListener("input", e => { state.name = e.target.value.trim(); });
 
 function show(which) {
   document.body.classList.toggle("in-quiz", which === "s-quiz");
